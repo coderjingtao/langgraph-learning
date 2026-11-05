@@ -5,14 +5,25 @@
 
 ---
 
-## 🛠️ 环境信息与使用方法
+## 🛠️ 环境信息与版本说明
 
-本项目使用 `uv` 管理虚拟环境与依赖，固定使用 **Python 3.13 稳定版**。
+本项目使用 `uv` 管理虚拟环境与依赖，并通过 [`uv.lock`](./uv.lock) 严格锁定所有依赖包版本，确保未来任意时间克隆仓库均可 100% 复现运行结果，不会因上游版本升级而失效。
 
-### 1. 查看虚拟环境与 Python 版本
+| 组件 / 依赖包 | 锁定版本 (`uv.lock`) | 版本约束 (`pyproject.toml`) | 说明 |
+| :--- | :--- | :--- | :--- |
+| **Python** | `3.13.x` | `>=3.13` | 运行时环境 |
+| **`langgraph`** | **`1.2.18`** | `>=1.2.18, <2.0.0` | LangGraph 核心状态图与函数式编排引擎（基于 `1.x` 稳定版 API） |
+| **`langchain-core`** | **`1.7.3`** | `>=1.7.3, <2.0.0` | 消息模型 (`HumanMessage`/`AIMessage`)、`@tool` 与 `RunnableConfig` |
+| **`langgraph-checkpoint`** | `4.3.1` | 自动解析锁定 | 短期记忆 Checkpointer (`InMemorySaver`) 与长期记忆 (`InMemoryStore`) |
+| **`langgraph-prebuilt`** | `1.1.1` | 自动解析锁定 | 预构建组件 (`ToolNode`、`tools_condition`) |
+
+### 1. 复现安装与查看环境版本
 ```bash
+# 根据 uv.lock 精确还原锁定的依赖版本
+uv sync --frozen
+
+# 查看 Python 与 LangGraph 版本
 uv run python --version
-# 输出: Python 3.13.x
 ```
 
 ### 2. 单独运行任意章节脚本

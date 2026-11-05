@@ -1,12 +1,12 @@
 [project]
 name = "langgraph-learning"
 version = "0.1.0"
-description = "Add your description here"
+description = "LangGraph 1.x (v1.2.18) 体系化自学教程与可运行示例 (Chapters 01-12)"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "langchain-core>=1.7.3",
-    "langgraph>=1.2.18",
+    "langchain-core>=1.7.3,<2.0.0",
+    "langgraph>=1.2.18,<2.0.0",
 ]
 
 [project.scripts]
