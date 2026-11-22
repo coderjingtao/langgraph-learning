@@ -8,3 +8,14 @@ wheels/
 
 # Virtual environments
 .venv
+
+# IDEs & editors
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
