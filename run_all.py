@@ -1,5 +1,5 @@
 """
-一键运行并验证全部 12 个 LangGraph 学习章节脚本
+一键运行并验证全部 LangGraph 学习章节脚本
 运行方式：
     uv run python run_all.py
 """
@@ -23,7 +23,7 @@ def main():
             sys.exit(result.returncode)
         print()
 
-    print("🎉 全部 12 个 LangGraph 学习章节均已独立执行并验证通过！")
+    print(f"🎉 全部 {len(CHAPTER_FILES)} 个 LangGraph 学习章节均已独立执行并验证通过！")
 
 
 if __name__ == "__main__":

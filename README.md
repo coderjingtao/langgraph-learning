@@ -1,6 +1,6 @@
 # LangGraph 官方文档体系化自学教程 (Python 3.13 + uv)
 
-本项目根据 [LangGraph 官方文档](https://langchain-ai.github.io/langgraph/) 的核心架构与章节脉络，设计了 **12 个循序渐进、可独立运行的 Python 学习文件**。
+本项目根据 [LangGraph 官方文档](https://langchain-ai.github.io/langgraph/) 的核心架构与章节脉络，设计了 **14 个循序渐进、可独立运行的 Python 学习文件**。
 每个 `.py` 文件对应一个核心知识模块，内置详尽的**中文概念解析、代码注释与断言验证**，且**无需配置付费 API Key** 即可在本地直接运行验证结果。
 
 ---
@@ -56,3 +56,5 @@ uv run python run_all.py
 | [`10_subgraphs.py`](./10_subgraphs.py) | **子图与多智能体编排** | 子图（Subgraphs）嵌套、状态 Schema 共享与隔离、使用 `Command(update=..., goto=...)` 路由 |
 | [`11_long_term_memory_store.py`](./11_long_term_memory_store.py) | **跨会话长期记忆存储** | 短期记忆 vs 长期记忆、`InMemoryStore` (`BaseStore`)、`namespace`、`put` / `search` 依赖注入 |
 | [`12_functional_api.py`](./12_functional_api.py) | **函数式 API 编排** | `@entrypoint`、`@task` 异步并发与 Checkpoint 幂等缓存、原生 Python 控制流结合 `interrupt` |
+| [`13_error_handling_and_retry.py`](./13_error_handling_and_retry.py) | **错误处理与重试策略** | `RetryPolicy` 指数退避、`error_handler` + `NodeError`、`set_node_defaults`、`ToolNode(handle_tool_errors)`、Checkpointer 断点续跑 |
+| [`14_node_caching.py`](./14_node_caching.py) | **节点缓存机制** | `CachePolicy`、`InMemoryCache`、`compile(cache=...)`、`set_node_defaults`、自定义 `key_func`、`ttl` 过期、`__metadata__.cached`、`@task(cache_policy=...)` |
